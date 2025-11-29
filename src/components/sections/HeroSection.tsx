@@ -52,7 +52,7 @@ export default function HeroSection() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          {/* لوگو - بسیار زیبا و برجسته */}
+          {/* لوگو */}
           <div className="mb-16 relative">
             <div className="relative">
               {/* هاله نور پشت لوگو */}
@@ -84,8 +84,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* عنوان اصلی - بسیار زیبا */}
-          <div className="mb-20 w-full">
+          {/* عنوان اصلی */}
+          <div className="mb-16 w-full">
             <div className="space-y-6">
               <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
                 <span className="block text-white mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-200 bg-clip-text text-transparent">
@@ -99,8 +99,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* توضیحات - بسیار زیبا */}
-          <div className="mb-24 w-full max-w-4xl mx-auto">
+          {/* توضیحات */}
+          <div className="mb-16 w-full max-w-4xl mx-auto">
             <div className="relative">
               <p className="text-2xl lg:text-3xl xl:text-4xl text-gray-300 leading-relaxed font-light px-8 bg-gradient-to-b from-white/80 to-white/60 bg-clip-text text-transparent">
                 هر فریم، یک احساس | هر پروژه، یک{" "}
@@ -117,8 +117,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* دکمه‌های اقدام - فوق العاده */}
-          <div className="mb-28 w-full max-w-2xl mx-auto">
+          {/* دکمه‌های اقدام */}
+          <div className="mb-20 w-full max-w-2xl mx-auto">
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               {/* دکمه اول */}
               <button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 min-w-[240px] border-2 border-blue-400/30 flex items-center justify-center gap-4">
@@ -161,52 +161,67 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* آمار و ارقام - بسیار زیبا */}
-          <div className="w-full max-w-4xl mx-auto">
-            <div className="grid grid-cols-3 gap-16">
-              {[
-                { number: "۵۰۰+", label: "پروژه موفق", suffix: "🎯" },
-                { number: "۹۸%", label: "رضایت مشتری", suffix: "⭐" },
-                { number: "۵+", label: "سال تجربه", suffix: "🚀" },
-              ].map((stat, index) => (
-                <div key={index} className="text-center group cursor-pointer">
-                  <div className="relative">
-                    {/* افکت پشت عدد */}
-                    <div className="absolute inset-0 text-7xl font-black text-blue-500/5 -z-10 group-hover:text-purple-500/10 transition-colors duration-500">
-                      {stat.number}
+          {/* فاصله بین دکمه‌ها و آمار - ارتفاع کمتر */}
+          <div className="h-8"></div>
+
+          {/* آمار و ارقام - کاملاً align شده */}
+          <div className="w-full max-w-4xl mx-auto mb-16">
+            <div className="glass-dark rounded-3xl p-8 border border-white/20 backdrop-blur-xl shadow-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch justify-items-center">
+                {[
+                  {
+                    number: "۵۰۰+",
+                    label: "پروژه موفق",
+                    suffix: "🎯",
+                    color: "from-blue-400 to-cyan-400",
+                  },
+                  {
+                    number: "۹۸%",
+                    label: "رضایت مشتری",
+                    suffix: "⭐",
+                    color: "from-purple-400 to-pink-400",
+                  },
+                  {
+                    number: "۵+",
+                    label: "سال تجربه",
+                    suffix: "🚀",
+                    color: "from-green-400 to-blue-400",
+                  },
+                ].map((stat, index) => (
+                  <div
+                    key={index}
+                    className="text-center group cursor-pointer flex flex-col items-center justify-center w-full p-6 rounded-2xl hover:bg-white/5 transition-all duration-500"
+                  >
+                    <div className="relative mb-4">
+                      {/* افکت پشت عدد */}
+                      <div className="absolute inset-0 text-5xl font-black opacity-10 -z-10 transition-all duration-500 whitespace-nowrap">
+                        {stat.number}
+                      </div>
+
+                      {/* عدد اصلی */}
+                      <div
+                        className={`text-4xl lg:text-5xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-500 relative`}
+                      >
+                        {stat.number}
+                        <span className="absolute -top-3 -right-4 text-xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:-translate-y-1">
+                          {stat.suffix}
+                        </span>
+                      </div>
                     </div>
 
-                    <div className="text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-4 group-hover:scale-110 transition-transform duration-500 relative">
-                      {stat.number}
-                      <span className="absolute -top-2 -right-4 text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        {stat.suffix}
-                      </span>
-                    </div>
-                    <div className="text-gray-400 text-lg font-medium group-hover:text-white transition-colors duration-500 transform group-hover:translate-y-1">
+                    {/* عنوان */}
+                    <div className="text-gray-300 text-lg font-medium group-hover:text-white transition-colors duration-500 transform group-hover:translate-y-1">
                       {stat.label}
                     </div>
 
                     {/* خط انیمیشنی */}
-                    <div className="w-0 group-hover:w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-4 transition-all duration-700 rounded-full"></div>
+                    <div
+                      className={`w-0 h-1 bg-gradient-to-r ${stat.color} mt-4 rounded-full transition-all duration-700 group-hover:w-16`}
+                    ></div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* نشانگر اسکرول پایین - بسیار زیبا */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center space-y-4 group cursor-pointer">
-          <span className="text-gray-400 text-sm font-medium group-hover:text-white transition-colors duration-300">
-            کشف دنیای خلاقیت
-          </span>
-          <div className="w-10 h-16 border-2 border-gray-400/50 rounded-full flex justify-center group-hover:border-blue-400 transition-colors duration-300 relative overflow-hidden">
-            <div className="w-1 h-6 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full mt-2 animate-bounce"></div>
-
-            {/* افکت درخشان */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </div>
       </div>
