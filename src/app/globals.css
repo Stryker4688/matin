@@ -1,0 +1,521 @@
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css");
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/irannastaliq-font@v1.0.19/dist/Font/IranNastaliq.css");
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #d4af37;
+  --primary-dark: #b8941f;
+  --secondary: #1a1a1a;
+  --accent: #f8f9fa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --font-sans: Sahel, Vazirmatn, system-ui, sans-serif;
+  --font-nastaliq: IranNastaliq, system-ui;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fefefe;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* انیمیشن‌های جدید */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* کلاس‌های انیمیشن */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  animation: gradientShift 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-gradient-flow {
+  animation: gradient 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+.bg-300 {
+  background-size: 300% 300%;
+}
+
+/* افکت‌های شیشه‌ای */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* افکت‌های شیشه‌ای پیشرفته */
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* گرادیانت طلایی */
+.gold-gradient {
+  background: linear-gradient(
+    135deg,
+    #fef3c7,
+    #fcd34d,
+    #f59e0b,
+    #fcd34d,
+    #fef3c7
+  );
+  background-size: 200% 200%;
+}
+
+.gold-gradient:hover {
+  animation: gradientShift 2s ease infinite;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* سایه‌ها */
+.shadow-luxury {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.shadow-luxury-dark {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 10px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.shadow-soft {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* سایه‌های پیشرفته */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* افکت hover */
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* استایل‌های نوبار - استاندارد */
+header {
+  height: 64px !important;
+  padding: 0.75rem 0 !important;
+}
+
+header.scrolled {
+  height: 56px !important;
+  padding: 0.5rem 0 !important;
+}
+
+/* منوهای استاندارد */
+nav a {
+  font-size: 0.95rem !important;
+  padding: 0.5rem 1.25rem !important;
+  min-width: 110px !important;
+}
+
+/* دکمه CTA استاندارد */
+button.bg-gradient-to-br {
+  padding: 0.625rem 1.25rem !important;
+  font-size: 0.95rem !important;
+  min-width: 140px !important;
+}
+
+/* منوی موبایل استاندارد */
+.mobile-nav-item {
+  font-size: 1rem !important;
+  padding: 0.875rem 1.125rem !important;
+}
+
+/* کلاس‌های فونت نستلیق */
+.font-nastaliq {
+  font-family: var(--font-nastaliq);
+  line-height: 1.8;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+.text-nastaliq-lg {
+  font-family: var(--font-nastaliq);
+  font-size: 2.8rem;
+  line-height: 1.6;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+}
+
+.text-nastaliq-md {
+  font-family: var(--font-nastaliq);
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+.text-nastaliq-sm {
+  font-family: var(--font-nastaliq);
+  font-size: 1.2rem;
+  line-height: 2;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+}
+
+.text-nastaliq-xs {
+  font-family: var(--font-nastaliq);
+  font-size: 1rem;
+  line-height: 2.2;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+}
+
+/* کلاس‌های فونت ساحل (برای متن‌های عادی) */
+.font-dima {
+  font-family: Sahel, Vazirmatn, system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.text-dima-lg {
+  font-family: Sahel, Vazirmatn, system-ui, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-dima-sm {
+  font-family: Sahel, Vazirmatn, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.text-dima-md {
+  font-family: Sahel, Vazirmatn, system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.005em;
+}
+
+/* استایل اسکرول بار */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea, #f093fb);
+}
+
+::selection {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+::-moz-selection {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+/* فوکوس و accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* کلاس‌های کمکی */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.hero-bg {
+  background: linear-gradient(135deg, #fefefe 0%, #f8fafc 50%, #f1f5f9 100%);
+}
+
+.luxury-border {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* گرادیانت‌های اضافی */
+.gradient-primary {
+  background: linear-gradient(135deg, #d4af37, #b8941f);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+/* افکت‌های متن */
+.text-shadow-gold {
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+}
+
+.text-shadow-dark {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* افکت‌های تصویر */
+.image-glow {
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+}
+
+.image-glow-dark {
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+}
+
+/* transition های سفارشی */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-bounce {
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* transition های سفارشی */
+.transition-1500 {
+  transition: all 1.5s ease;
+}
+
+/* responsive text برای نستلیق */
+@media (max-width: 768px) {
+  .text-nastaliq-lg {
+    font-size: 2.2rem;
+    line-height: 1.7;
+  }
+
+  .text-nastaliq-md {
+    font-size: 1.5rem;
+    line-height: 1.9;
+  }
+
+  .text-nastaliq-sm {
+    font-size: 1.1rem;
+    line-height: 2.1;
+  }
+
+  .text-nastaliq-xs {
+    font-size: 0.9rem;
+    line-height: 2.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-nastaliq-lg {
+    font-size: 1.8rem;
+    line-height: 1.8;
+  }
+
+  .text-nastaliq-md {
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+}
+
+/* loading states */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* gradient backgrounds */
+.bg-gradient-luxury {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
