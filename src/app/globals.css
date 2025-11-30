@@ -114,7 +114,6 @@ body {
   }
 }
 
-/* انیمیشن‌های جدید */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -261,7 +260,7 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* استایل‌های نوبار - استاندارد */
+/* استایل‌های نوبار */
 header {
   height: 64px !important;
   padding: 0.75rem 0 !important;
@@ -332,7 +331,7 @@ button.bg-gradient-to-br {
   letter-spacing: 0.04em;
 }
 
-/* کلاس‌های فونت ساحل (برای متن‌های عادی) */
+/* کلاس‌های فونت ساحل */
 .font-dima {
   font-family: Sahel, Vazirmatn, system-ui, sans-serif;
   font-weight: 400;
@@ -452,7 +451,6 @@ a:focus-visible {
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* transition های سفارشی */
 .transition-1500 {
   transition: all 1.5s ease;
 }
@@ -518,4 +516,29 @@ a:focus-visible {
 
 .bg-gradient-dark {
   background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+.footer-gradient {
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a1a2e 30%,
+    #16213e 70%,
+    #0f3460 100%
+  );
+}
+
+/* بهبود انیمیشن‌ها برای فوتر */
+@keyframes footer-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-footer-float {
+  animation: footer-float 4s ease-in-out infinite;
 }

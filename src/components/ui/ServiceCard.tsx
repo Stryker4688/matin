@@ -8,7 +8,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service, index }: ServiceCardProps) {
   return (
     <div
-      className="group text-center glass-effect rounded-2xl p-8 shadow-soft hover-lift border border-white/50 overflow-hidden relative"
+      className="group text-center glass-effect rounded-xl p-6 shadow-soft hover-lift border border-white/50 overflow-hidden relative"
       style={{
         animationDelay: `${index * 0.1}s`,
         animationFillMode: "both",
@@ -19,17 +19,17 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
 
       {/* آیکون */}
       <div className="relative z-10">
-        <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+        <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
           {service.icon}
         </div>
 
         {/* عنوان */}
-        <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-gold-gradient transition-colors duration-300">
+        <h3 className="text-lg font-bold text-gray-800 mb-3 group-hover:text-gold-gradient transition-colors duration-300">
           {service.title}
         </h3>
 
         {/* توضیحات */}
-        <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+        <p className="text-gray-600 leading-relaxed text-sm">
           {service.description}
         </p>
       </div>
